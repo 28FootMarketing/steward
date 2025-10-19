@@ -1,6 +1,20 @@
 import os, time, json, requests, pandas as pd, numpy as np
 import streamlit as st
+import streamlit as st, os
 
+THEME_DEFAULT = os.getenv("THEME_DEFAULT", "light")  # "light" or "dark"
+
+def apply_theme(theme:str):
+    css_path = f"ui/themes/{'dark' if theme=='dark' else 'light'}.css"
+    try:
+        with open(css_path, "r", encoding="utf-8") as f:
+            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    except Exception as e:
+        st.warning(f"Theme load error: {e}")
+
+# UI toggle
+theme_choice = st.sidebar.radio("Theme", ["light","dark"], index=0 if THEME_DEFAULT=="light" else 1)
+apply_theme(theme_choice)
 # =========================
 # Mobile-first page config
 # =========================
