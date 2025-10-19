@@ -1,0 +1,31 @@
+:root{
+  --bg: #ffffff;
+  --card: #ffffff;
+  --text: #0f1720;
+  --muted: #4a4a4a;
+  --accent: #2E8540; /* Placeholder primary */
+  --accent-2:#1f6f30;
+  --border:#E6E6E6;
+  --chip-bg:#E7F3EA;
+  --chip-border:#BFE1CB;
+}
+
+html, body { background: var(--bg) !important; color: var(--text) !important; }
+.block-container { padding: 1.2rem 1rem 5rem 1rem; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+.topbar {
+  position: sticky; top: 0; z-index: 99;
+  background: var(--accent); color: #fff;
+  padding: 10px 12px; margin: -8px -8px 10px -8px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.badge { background: var(--accent-2); border-radius: 10px; padding: 3px 8px; font-size: .72rem; }
+.small { font-size:.84rem; color: var(--muted); }
+.tag { display:inline-block; background:var(--chip-bg); color:var(--accent-2); border:1px solid var(--chip-border); font-size:.70rem; padding:2px 7px; border-radius:16px; margin-right:6px; margin-bottom:4px;}
